@@ -1,0 +1,65 @@
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 60px;
+
+    background:rgba(13,13,13,.7);
+
+    backdrop-filter:blur(15px);
+
+}
+
+.logo{
+
+    font-family:var(--titulo);
+
+    font-size:2rem;
+
+    letter-spacing:3px;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:var(--vermelho);
+
+}
+
+.icons{
+
+    display:flex;
+
+    gap:25px;
+
+    font-size:1.1rem;
+
+}

@@ -1,0 +1,1 @@
+console.log("Vândala carregada com sucesso!");

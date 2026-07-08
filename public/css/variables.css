@@ -1,0 +1,23 @@
+:root{
+
+    /* Cores */
+
+    --preto:#0D0D0D;
+    --preto2:#181818;
+    --cinza:#6C757D;
+    --branco:#F5F5F5;
+    --vermelho:#D90429;
+    --borda:#2A2A2A;
+
+    /* Fontes */
+
+    --titulo:'Anton',sans-serif;
+    --texto:'Poppins',sans-serif;
+
+    /* Medidas */
+
+    --container:1300px;
+    --radius:10px;
+    --transition:.3s ease;
+
+}

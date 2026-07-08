@@ -1,0 +1,61 @@
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:url("../img/hero/banner.jpg") center center/cover no-repeat;
+
+    position:relative;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    width:1300px;
+
+    margin:auto;
+
+    z-index:2;
+
+}
+
+.hero h1{
+
+    font-family:var(--titulo);
+
+    font-size:6rem;
+
+    line-height:90px;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    margin-bottom:40px;
+
+    color:#DDD;
+
+}

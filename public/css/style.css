@@ -1,0 +1,56 @@
+@import url("reset.css");
+@import url("variables.css");
+
+@import url("navbar.css");
+@import url("hero.css");
+@import url("cards.css");
+@import url("banner.css");
+@import url("newsletter.css");
+@import url("footer.css");
+@import url("responsive.css");
+
+.container{
+
+    max-width:1300px;
+    margin:auto;
+    padding:0 25px;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 35px;
+
+    border:2px solid var(--branco);
+
+    color:var(--branco);
+
+    transition:var(--transition);
+
+    text-transform:uppercase;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+}
+
+.btn:hover{
+
+    background:var(--branco);
+
+    color:var(--preto);
+
+}

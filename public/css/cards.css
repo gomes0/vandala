@@ -1,0 +1,29 @@
+.produtos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.produto-card{
+    border:1px solid #ddd;
+    border-radius:10px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.produto-imagem{
+    width:100%;
+    height:320px;
+    overflow:hidden;
+}
+
+.produto-imagem img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.produto-info{
+    padding:20px;
+}

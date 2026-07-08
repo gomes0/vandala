@@ -1,0 +1,41 @@
+.newsletter{
+
+    text-align:center;
+
+}
+
+.newsletter form{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.newsletter input{
+
+    width:420px;
+
+    padding:18px;
+
+    background:#181818;
+
+    border:1px solid #333;
+
+    color:white;
+
+}
+
+.newsletter button{
+
+    padding:18px 35px;
+
+    background:white;
+
+    color:black;
+
+}

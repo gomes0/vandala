@@ -1,0 +1,43 @@
+footer{
+
+    background:#090909;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:40px;
+
+    padding:70px;
+
+}
+
+footer h2{
+
+    font-family:var(--titulo);
+
+    margin-bottom:20px;
+
+}
+
+footer h3{
+
+    margin-bottom:20px;
+
+}
+
+footer a{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#AAA;
+
+}
+
+footer a:hover{
+
+    color:white;
+
+}
