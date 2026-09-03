@@ -21,6 +21,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    {{-- Favicon --}}
+    <link rel="icon" type="image/png" href="{{ asset('img/vandala-icon.png') }}">
+
     @yield('styles')
 
 </head>

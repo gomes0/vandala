@@ -6,19 +6,25 @@
 
     <section class="hero">
 
-        <div class="container">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="{{ asset('videos/bigrushgif.mp4') }}" type="video/mp4">
+    </video>
 
-            <h1>VISTA A REBELDIA</h1>
+    <div class="hero-overlay"></div>
 
-            <p>Nascida no concreto. Feita para as ruas.</p>
+    <div class="container hero-content">
 
-            <a href="#" class="btn">
-                Explorar Coleção
-            </a>
+        <h1>VISTA A REBELDIA</h1>
 
-        </div>
+        <p>Nascida no concreto. Feita para as ruas.</p>
 
-    </section>
+        {{-- <a href="{{ route('loja') }}" class="btn">
+            Explorar Coleção
+        </a> --}}
+
+    </div>
+
+</section>
 
     <section class="produtos-home">
 

@@ -73,6 +73,11 @@ Route::get('/sobre', function () {
     return view('sobre.index');
 })->name('sobre');
 
+Route::get('/contato', function () {
+    return view('contato.index');
+})->name('contato');
+
+
 
 
 

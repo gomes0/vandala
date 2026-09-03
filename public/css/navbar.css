@@ -24,14 +24,24 @@ header{
 
 }
 
-.logo{
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
 
-    font-family:var(--titulo);
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
 
-    font-size:2rem;
-
-    letter-spacing:3px;
-
+.logo span {
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
 nav ul{

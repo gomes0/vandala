@@ -1,7 +1,10 @@
 <header>
 
     <div class="logo">
-        <a href="/">VÂNDALA</a>
+    <a href="/">
+        <img src="{{ asset('img/vandala-icon.png') }}" alt="Vândala">
+        <span>VÂNDALA</span>
+    </a>
     </div>
 
     <nav>
@@ -16,7 +19,7 @@
 
             <li><a href="/sobre">Sobre</a></li>
 
-            <li><a href="/contato">Contato</a></li>
+            <li><a href="{{ route('contato') }}">Contato</a></li>
 
         </ul>
 
