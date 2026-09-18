@@ -99,3 +99,156 @@ section{
 
     z-index: 2;
 }
+
+/* Categorias home */
+.categorias-home {
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.categorias-home h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.categoria-card {
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 20px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.categoria-card h3 {
+    color: #fff;
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.categoria-card span {
+    color: #aaa;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+    border-color: #fff;
+}
+
+.categoria-card:hover span {
+    color: #fff;
+}
+
+
+/* Responsivo */
+@media (max-width: 1000px) {
+
+    .categorias-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==============================
+   LANÇAMENTOS
+============================== */
+
+.lancamentos {
+    padding: 90px 0;
+    background: #0a0a0a;
+}
+
+.lancamentos-header h2 {
+    margin-top: 8px;
+    font-size: 36px;
+    color: #fff;
+}
+
+.lancamentos-header span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #888;
+}
+
+.ver-todos {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.ver-todos:hover {
+    color: #A11212;
+}
+
+
+/* GRID DOS PRODUTOS */
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 1000px) {
+
+    .produtos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

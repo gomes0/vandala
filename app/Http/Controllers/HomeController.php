@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produto;
+use App\Models\Categoria;
 
 class HomeController extends Controller
 {
@@ -14,8 +15,14 @@ class HomeController extends Controller
         ])
         ->where('status', 'ativo')
         ->latest()
+        ->take(12)
         ->get();
 
-        return view('home.index', compact('produtos'));
+        $categorias = Categoria::all();
+
+        return view('home.index', compact(
+            'produtos',
+            'categorias'
+        ));
     }
 }
