@@ -77,8 +77,7 @@ Route::get('/contato', function () {
     return view('contato.index');
 })->name('contato');
 
-
-
-
+Route::get('/produto/{produto}', [ProdutoController::class, 'show'])
+    ->name('produto.show');
 
 require __DIR__ . '/auth.php';

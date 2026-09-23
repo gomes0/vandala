@@ -1,23 +1,48 @@
 @php
-    $imagem = $produto->imagens()->where('principal', true)->first();
+    $imagem = $produto->imagens()
+        ->where('principal', true)
+        ->first();
+
+    $imagem = $imagem ?? $produto->imagens()->first();
 @endphp
 
-<div style="border:1px solid #000; padding:20px;">
+<a href="{{ route('produto.show', $produto) }}" class="produto-card">
 
     @if ($imagem)
+
         <div class="produto-imagem">
 
-            <img src="{{ asset($imagem->caminho) }}" alt="{{ $produto->nome }}">
+            <img
+                src="{{ asset($imagem->caminho) }}"
+                alt="{{ $produto->nome }}"
+            >
 
         </div>
+
     @else
-        <p>Sem imagem</p>
+
+        <div class="produto-imagem sem-imagem">
+            <p>Sem imagem</p>
+        </div>
+
     @endif
 
-    <h2>{{ $produto->nome }}</h2>
+    <div class="produto-info">
 
-    <p>{{ $produto->categoria->nome }}</p>
+        <span class="produto-categoria">
+            {{ $produto->categoria->nome }}
+        </span>
 
-    <p>R$ {{ number_format($produto->preco, 2, ',', '.') }}</p>
+        <h2>{{ $produto->nome }}</h2>
 
-</div>
+        <p class="produto-preco">
+            R$ {{ number_format($produto->preco, 2, ',', '.') }}
+        </p>
+
+        <span class="produto-ver">
+            VER PRODUTO →
+        </span>
+
+    </div>
+
+</a>

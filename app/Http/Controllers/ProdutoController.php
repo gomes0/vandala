@@ -11,8 +11,8 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = Produto::with('categoria')
-                    ->latest()
-                    ->get();
+            ->latest()
+            ->get();
 
         return view('admin.produtos.index', compact('produtos'));
     }
@@ -91,5 +91,15 @@ class ProdutoController extends Controller
         return redirect()
             ->route('produtos.index')
             ->with('success', 'Produto removido!');
+    }
+    //Show
+    public function show(Produto $produto)
+    {
+        $produto->load([
+            'categoria',
+            'imagens'
+        ]);
+
+        return view('produto.show', compact('produto'));
     }
 }
