@@ -31,8 +31,21 @@
             <i class="bi bi-search"></i>
         </a>
 
-        <a href="#">
+        @php
+            $quantidadeCarrinho = collect(session('carrinho', []))
+                ->sum('quantidade');
+        @endphp
+
+        <a href="{{ route('carrinho.index') }}" class="carrinho-link">
+
             <i class="bi bi-cart-fill"></i>
+
+            @if($quantidadeCarrinho > 0)
+                <span class="carrinho-contador">
+                    {{ $quantidadeCarrinho }}
+                </span>
+            @endif
+
         </a>
 
         @auth

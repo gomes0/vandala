@@ -43,7 +43,7 @@
 
                         <h3>{{ $categoria->nome }}</h3>
 
-                        <span>VER PRODUTOS →</span>
+                        <span>VER PRODUTOS </span>
 
                     </a>
 
@@ -71,7 +71,7 @@
             </div>
 
             <a href="#" class="ver-todos">
-                VER TODOS →
+                VER TODOS 
             </a>
 
         </div>

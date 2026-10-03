@@ -8,6 +8,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\CarrinhoController;
+use App\Http\Controllers\CheckoutController;
+
 
 // Loja
 // Route::get('/', function () {
@@ -79,5 +82,23 @@ Route::get('/contato', function () {
 
 Route::get('/produto/{produto}', [ProdutoController::class, 'show'])
     ->name('produto.show');
+
+Route::get('/carrinho', [CarrinhoController::class, 'index'])
+    ->name('carrinho.index');
+
+Route::post('/carrinho/adicionar/{produto}', [CarrinhoController::class, 'adicionar'])
+    ->name('carrinho.adicionar');
+
+Route::post('/carrinho/remover/{produto}', [CarrinhoController::class, 'remover'])
+    ->name('carrinho.remover');
+
+Route::post('/carrinho/aumentar/{produto}', [CarrinhoController::class, 'aumentar'])
+    ->name('carrinho.aumentar');
+
+Route::post('/carrinho/diminuir/{produto}', [CarrinhoController::class, 'diminuir'])
+    ->name('carrinho.diminuir');
+
+Route::get('/checkout', [CheckoutController::class, 'index'])
+    ->name('checkout.index');
 
 require __DIR__ . '/auth.php';

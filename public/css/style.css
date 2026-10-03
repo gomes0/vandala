@@ -497,22 +497,583 @@ section{
     color: #666;
 }
 
+/* =========================
+   CARRINHO
+========================= */
+
+.carrinho {
+    min-height: 80vh;
+    padding: 90px 0;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+.carrinho-header {
+    margin-bottom: 45px;
+}
+
+.carrinho-header span {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.carrinho-header h1 {
+    margin-top: 8px;
+    font-size: 36px;
+}
+
+
+/* MENSAGENS */
+
+.carrinho-mensagem {
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border: 1px solid #292929;
+}
+
+.carrinho-mensagem.sucesso {
+    color: #fff;
+}
+
+.carrinho-mensagem.erro {
+    color: #A11212;
+}
+
+
+/* CARRINHO VAZIO */
+
+.carrinho-vazio {
+    padding: 70px 20px;
+    text-align: center;
+    border: 1px solid #292929;
+    background: #111;
+}
+
+.carrinho-vazio h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.carrinho-vazio a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.carrinho-vazio a:hover {
+    color: #A11212;
+}
+
+
+/* ITEM */
+
+.carrinho-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.carrinho-item {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 25px;
+    align-items: center;
+    padding: 20px;
+    background: #111;
+    border: 1px solid #292929;
+}
+
+.carrinho-item-imagem {
+    width: 120px;
+    height: 120px;
+    background: #181818;
+    overflow: hidden;
+}
+
+.carrinho-item-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrinho-item-info h2 {
+    margin: 0 0 8px;
+    font-size: 19px;
+}
+
+.carrinho-item-info p {
+    color: #aaa;
+    margin: 0 0 18px;
+}
+
+
+/* QUANTIDADE */
+
+.carrinho-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carrinho-quantidade form {
+    margin: 0;
+}
+
+.carrinho-quantidade button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #444;
+    background: #181818;
+    color: #fff;
+    cursor: pointer;
+}
+
+.carrinho-quantidade button:hover {
+    border-color: #fff;
+}
+
+.carrinho-quantidade span {
+    min-width: 20px;
+    text-align: center;
+}
+
+
+/* TOTAL DO ITEM */
+
+.carrinho-item-total {
+    text-align: right;
+}
+
+.carrinho-item-total strong {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.carrinho-item-total button {
+    border: none;
+    background: transparent;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.carrinho-item-total button:hover {
+    color: #A11212;
+}
+
+
+/* RESUMO */
+
+.carrinho-resumo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #292929;
+}
+
+.carrinho-resumo span {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.carrinho-resumo strong {
+    font-size: 26px;
+}
+
+/* =========================
+   ÍCONE DO CARRINHO
+========================= */
+
+.carrinho-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho-contador {
+    position: absolute;
+    top: -9px;
+    right: -10px;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 4px;
+
+    background: #A11212;
+    color: #fff;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* =========================================
+   VÂNDALA — CHECKOUT
+   ========================================= */
+
+.checkout {
+    min-height: 100vh;
+    padding: 70px 0 100px;
+    background: #111;
+    color: #eee;
+}
+
+.checkout .container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.checkout-header {
+    margin-bottom: 55px;
+}
+
+.checkout-header span {
+    display: block;
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #777;
+}
+
+.checkout-header h1 {
+    margin: 0;
+
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* =========================================
+   GRID PRINCIPAL
+   ========================================= */
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+    gap: 70px;
+    align-items: start;
+}
+
+/* =========================================
+   FORMULÁRIO
+   ========================================= */
+
+.checkout-form {
+    background: #111;
+    padding: 40px;
+    border: 1px solid #fff;
+}
+
+.checkout-form h2,
+.checkout-resumo h2 {
+    margin: 0 0 35px;
+
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    margin-bottom: 9px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.form-group input {
+    width: 100%;
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid #d8d8d8;
+    border-radius: 0;
+
+    background: #111;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input:hover {
+    border-color: #aaa;
+}
+
+.form-group input:focus {
+    border-color: #fff;
+
+    box-shadow: 0 0 0 1px #111;
+}
+
+/* =========================================
+   CAMPOS DUPLOS
+   ========================================= */
+
+.checkout-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* =========================================
+   RESUMO DO PEDIDO
+   ========================================= */
+
+.checkout-resumo {
+    position: sticky;
+    top: 30px;
+
+    padding: 35px;
+    border: #fff 1px solid;
+    border-radius: 8px;
+
+    background: #111;
+    color: #fff;
+}
+
+.checkout-resumo h2 {
+    padding-bottom: 25px;
+    margin-bottom: 0;
+
+    border-bottom: 1px solid #fff;
+
+    color: #fff;
+}
+
+/* =========================================
+   PRODUTOS
+   ========================================= */
+
+.checkout-produto {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid #fff;
+}
+
+.checkout-produto > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.checkout-produto strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.checkout-produto span {
+    font-size: 13px;
+    color: #999;
+}
+
+.checkout-produto > strong {
+    white-space: nowrap;
+    color: #fff;
+}
+
+/* =========================================
+   TOTAL
+   ========================================= */
+
+.checkout-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid #fff;
+}
+
+.checkout-total span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.checkout-total strong {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* =========================================
+   BOTÃO FINALIZAR
+   ========================================= */
+
+.checkout-finalizar {
+    width: 100%;
+    height: 55px;
+
+    margin-top: 25px;
+
+    border: none;
+    border-radius: 0;
+
+    background: #fff;
+    color: #111;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.checkout-finalizar:hover {
+    background: #ddd;
+}
+
+.checkout-finalizar:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   RESPONSIVIDADE — TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .checkout {
+        padding: 50px 0 70px;
+    }
+
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .checkout-resumo {
+        position: static;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVIDADE — CELULAR
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .checkout {
+        padding: 35px 0 50px;
+    }
+
+    .checkout .container {
+        width: 94%;
+    }
+
+    .checkout-header {
+        margin-bottom: 35px;
+    }
+
+    .checkout-header span {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    .checkout-header h1 {
+        font-size: 32px;
+    }
+
+    .checkout-form {
+        padding: 25px 20px;
+    }
+
+    .checkout-form h2,
+    .checkout-resumo h2 {
+        font-size: 18px;
+    }
+
+    .checkout-dupla {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .checkout-resumo {
+        padding: 25px 20px;
+    }
+
+    .checkout-total strong {
+        font-size: 21px;
+    }
+
+    .checkout-produto {
+        gap: 15px;
+    }
+
+}
 
 /* RESPONSIVO */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
-    .produto-detalhes {
+    .carrinho {
         padding: 60px 0;
     }
 
-    .produto-detalhes-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .carrinho-item {
+        grid-template-columns: 80px 1fr;
+        gap: 15px;
     }
 
-    .produto-detalhes-info h1 {
-        font-size: 32px;
+    .carrinho-item-imagem {
+        width: 80px;
+        height: 80px;
+    }
+
+    .carrinho-item-total {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .carrinho-resumo {
+        justify-content: space-between;
     }
 
 }

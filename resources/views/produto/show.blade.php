@@ -115,9 +115,13 @@
 
                 @if($produto->estoque > 0)
 
-                    <button class="produto-adicionar">
-                        ADICIONAR AO CARRINHO
-                    </button>
+                    <form action="{{ route('carrinho.adicionar', $produto) }}" method="POST">
+                        @csrf
+
+                        <button type="submit" class="produto-adicionar">
+                            ADICIONAR AO CARRINHO
+                        </button>
+                    </form>
 
                 @endif
 
