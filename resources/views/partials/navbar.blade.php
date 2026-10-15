@@ -13,7 +13,7 @@
 
             <li><a href="/">Home</a></li>
 
-            <li><a href="/loja">Loja</a></li>
+            <a href="{{ route('loja.index') }}">Loja</a>
 
             <li><a href="/colecoes">Coleções</a></li>
 

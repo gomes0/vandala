@@ -10,34 +10,37 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('pedidos', function (Blueprint $table) {
+{
+    Schema::create('pedidos', function (Blueprint $table) {
+        $table->id();
 
-            $table->id();
+        $table->foreignId('usuario_id')
+            ->nullable()
+            ->constrained('usuarios')
+            ->nullOnDelete();
 
-            $table->foreignId('user_id')
-                ->constrained('usuarios')
-                ->cascadeOnDelete();
+        // Dados do cliente
+        $table->string('nome');
+        $table->string('email');
+        $table->string('cpf', 14);
+        $table->string('telefone', 20);
 
-            $table->decimal('valor_total', 10, 2);
+        // Endereço de entrega
+        $table->string('cep', 9);
+        $table->string('estado', 2);
+        $table->string('cidade');
+        $table->string('bairro');
+        $table->string('endereco');
+        $table->string('numero', 20);
+        $table->string('complemento')->nullable();
 
-            $table->enum('status', [
-                'Pendente',
-                'Pago',
-                'Enviado',
-                'Entregue',
-                'Cancelado'
-            ])->default('Pendente');
+        // Valores e situação
+        $table->decimal('subtotal', 10, 2);
+        $table->decimal('frete', 10, 2)->default(0);
+        $table->decimal('total', 10, 2);
+        $table->string('status')->default('pendente');
 
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('pedidos');
-    }
+        $table->timestamps();
+    });
+}
 };

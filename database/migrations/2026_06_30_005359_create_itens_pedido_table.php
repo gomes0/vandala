@@ -10,42 +10,26 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('item_pedidos', function (Blueprint $table) {
+{
+    Schema::create('pedido_itens', function (Blueprint $table) {
+        $table->id();
 
-            $table->id();
+        $table->foreignId('pedido_id')
+            ->constrained('pedidos')
+            ->cascadeOnDelete();
 
-            $table->foreignId('pedido_id')
-                ->constrained('pedidos')
-                ->cascadeOnDelete();
+        $table->foreignId('produto_id')
+            ->nullable()
+            ->constrained('produtos')
+            ->nullOnDelete();
 
-            $table->foreignId('produto_id')
-                ->constrained('produtos')
-                ->cascadeOnDelete();
+        // Cópia dos dados no momento da compra
+        $table->string('nome_produto');
+        $table->decimal('preco_unitario', 10, 2);
+        $table->unsignedInteger('quantidade');
+        $table->decimal('subtotal', 10, 2);
 
-            $table->foreignId('cor_id')
-                ->nullable()
-                ->constrained('cores')
-                ->nullOnDelete();
-
-            $table->foreignId('tamanho_id')
-                ->nullable()
-                ->constrained('tamanhos')
-                ->nullOnDelete();
-
-            $table->integer('quantidade');
-
-            $table->decimal('preco', 10, 2);
-
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('itens_pedido');
-    }
+        $table->timestamps();
+    });
+}
 };

@@ -10,6 +10,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\LojaController;
 
 
 // Loja
@@ -100,5 +101,8 @@ Route::post('/carrinho/diminuir/{produto}', [CarrinhoController::class, 'diminui
 
 Route::get('/checkout', [CheckoutController::class, 'index'])
     ->name('checkout.index');
+
+ Route::get('/loja', [LojaController::class, 'index'])
+     ->name('loja.index');
 
 require __DIR__ . '/auth.php';
