@@ -10,6 +10,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\CarrinhoController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\ColecaoController;
 use App\Http\Controllers\LojaController;
 
 
@@ -104,5 +105,8 @@ Route::get('/checkout', [CheckoutController::class, 'index'])
 
  Route::get('/loja', [LojaController::class, 'index'])
      ->name('loja.index');
+
+Route::get('/colecoes', [ColecaoController::class, 'index'])
+    ->name('colecoes.index');
 
 require __DIR__ . '/auth.php';

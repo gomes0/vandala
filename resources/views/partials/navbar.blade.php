@@ -15,7 +15,7 @@
 
             <a href="{{ route('loja.index') }}">Loja</a>
 
-            <li><a href="/colecoes">Coleções</a></li>
+            <a href="{{ route('colecoes.index') }}">Coleções</a>
 
             <li><a href="/sobre">Sobre</a></li>
 
