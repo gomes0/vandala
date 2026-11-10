@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -9,30 +8,29 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('enderecos', function (Blueprint $table) {
-            $table->id();
+        Schema::table('enderecos', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
 
-            $table->foreignId('user_id')
-                ->constrained()
+        Schema::table('enderecos', function (Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('usuarios')
                 ->cascadeOnDelete();
-
-            $table->string('nome_destinatario');
-            $table->string('telefone', 20);
-            $table->string('cep', 9);
-            $table->string('estado', 2);
-            $table->string('cidade');
-            $table->string('bairro');
-            $table->string('logradouro');
-            $table->string('numero', 20);
-            $table->string('complemento')->nullable();
-            $table->boolean('principal')->default(false);
-
-            $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('enderecos');
+        Schema::table('enderecos', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
+
+        Schema::table('enderecos', function (Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->cascadeOnDelete();
+        });
     }
 };
