@@ -15,6 +15,7 @@ use App\Http\Controllers\ColecaoController;
 use App\Http\Controllers\LojaController;
 use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EnderecoController;
 
 
 // =====================================================
@@ -102,6 +103,28 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/favoritos/{produto}', [FavoritoController::class, 'destroy'])
         ->name('favoritos.destroy');
+
+    // Meus endereços
+    Route::get('/meus-enderecos', [EnderecoController::class, 'index'])
+        ->name('enderecos.index');
+
+    Route::get('/meus-enderecos/novo', [EnderecoController::class, 'create'])
+        ->name('enderecos.create');
+
+    Route::post('/meus-enderecos', [EnderecoController::class, 'store'])
+        ->name('enderecos.store');
+
+    Route::get('/meus-enderecos/{id}/editar', [EnderecoController::class, 'edit'])
+        ->name('enderecos.edit');
+
+    Route::put('/meus-enderecos/{id}', [EnderecoController::class, 'update'])
+        ->name('enderecos.update');
+
+    Route::delete('/meus-enderecos/{id}', [EnderecoController::class, 'destroy'])
+        ->name('enderecos.destroy');
+
+    Route::patch('/meus-enderecos/{id}/principal', [EnderecoController::class, 'principal'])
+        ->name('enderecos.principal');
 
 });
 

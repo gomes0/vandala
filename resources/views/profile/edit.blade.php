@@ -65,6 +65,12 @@
                             <i class="bi bi-person"></i>
                             Meus dados
                         </a>
+
+                        <a href="{{ route('enderecos.index') }}">
+                            <i class="bi bi-geo-alt"></i>
+                            Meus endereços
+                        </a>
+
                         <a href="{{ route('favoritos.index') }}">
                             <i class="bi bi-heart"></i>
                             Meus favoritos

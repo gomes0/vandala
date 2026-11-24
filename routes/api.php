@@ -72,10 +72,19 @@ Route::middleware('auth:sanctum')->group(function () {
 
 // Endereços
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('enderecos', EnderecoController::class);
+
+    Route::apiResource('enderecos', EnderecoController::class)
+        ->names([
+            'index' => 'api.enderecos.index',
+            'store' => 'api.enderecos.store',
+            'show' => 'api.enderecos.show',
+            'update' => 'api.enderecos.update',
+            'destroy' => 'api.enderecos.destroy',
+        ]);
 
     Route::patch(
         '/enderecos/{endereco}/principal',
         [EnderecoController::class, 'principal']
-    );
+    )->name('api.enderecos.principal');
+
 });

@@ -1,4 +1,4 @@
-<header>
+<header class="site-header">
 
     <div class="logo">
     <a href="/">
@@ -8,22 +8,28 @@
     </div>
 
     <nav>
+    <ul>
+        <li>
+            <a href="{{ route('home') }}">Home</a>
+        </li>
 
-        <ul>
-
-            <li><a href="/">Home</a></li>
-
+        <li>
             <a href="{{ route('loja.index') }}">Loja</a>
+        </li>
 
+        <li>
             <a href="{{ route('colecoes.index') }}">Coleções</a>
+        </li>
 
-            <li><a href="/sobre">Sobre</a></li>
+        <li>
+            <a href="{{ route('sobre') }}">Sobre</a>
+        </li>
 
-            <li><a href="{{ route('contato') }}">Contato</a></li>
-
-        </ul>
-
-    </nav>
+        <li>
+            <a href="{{ route('contato') }}">Contato</a>
+        </li>
+    </ul>
+</nav>
 
     <div class="icons">
 

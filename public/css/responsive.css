@@ -10,13 +10,10 @@
 
 @media(max-width:768px){
 
-    header{
-
-        flex-direction:column;
-
-        gap:20px;
-
-    }
+    .site-header {
+    flex-direction: column;
+    gap: 20px;
+}
 
     nav ul{
 

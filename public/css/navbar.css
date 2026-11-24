@@ -1,75 +1,66 @@
-header{
 
-    width:100%;
+/* ========================================
+   NAVBAR PRINCIPAL — VÂNDALA
+======================================== */
 
-    position:fixed;
+.site-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
 
-    top:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    left:0;
+    padding: 25px 60px;
 
-    z-index:999;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:25px 60px;
-
-    background:rgba(13,13,13,.7);
-
-    backdrop-filter:blur(15px);
-
+    background: rgba(13, 13, 13, .7);
+    backdrop-filter: blur(15px);
 }
 
-.logo a {
+/* LOGO */
+
+.site-header .logo a {
     display: flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
 }
 
-.logo img {
+.site-header .logo img {
     width: 48px;
     height: 48px;
     object-fit: contain;
 }
 
-.logo span {
+.site-header .logo span {
     color: #fff;
     font-family: 'Anton', sans-serif;
     font-size: 28px;
     letter-spacing: 1px;
 }
 
-nav ul{
+/* NAVEGAÇÃO */
 
-    display:flex;
-
-    gap:35px;
-
+.site-header nav ul {
+    display: flex;
+    gap: 35px;
 }
 
-nav a{
-
-    transition:.3s;
-
+.site-header nav a {
+    transition: .3s;
 }
 
-nav a:hover{
-
-    color:var(--vermelho);
-
+.site-header nav a:hover {
+    color: var(--vermelho);
 }
 
-.icons{
+/* ÍCONES */
 
-    display:flex;
-
-    gap:25px;
-
-    font-size:1.1rem;
-
+.site-header .icons {
+    display: flex;
+    gap: 25px;
+    font-size: 1.1rem;
 }
