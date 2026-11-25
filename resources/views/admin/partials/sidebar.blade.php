@@ -18,7 +18,7 @@
 
         </a>
 
-        <a href="{{ route('produtos.index') }}">
+        <a href="{{ route('admin.produtos.index') }}">
 
             <i class="bi bi-box-seam"></i>
 
@@ -26,7 +26,7 @@
 
         </a>
 
-        <a href="{{ route('categorias.index') }}">
+        <a href="{{ route('admin.categorias.index') }}">
 
             <i class="bi bi-tags-fill"></i>
 
@@ -50,7 +50,7 @@
 
         </a>
 
-        <a href="#">
+        <a href="{{ route('admin.pedidos.index') }}">
 
             <i class="bi bi-cart-fill"></i>
 

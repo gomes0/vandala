@@ -3,64 +3,86 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pedido;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Lista todos os pedidos.
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::with('usuario')
+            ->orderByDesc('created_at')
+            ->paginate(15);
+
+        return view('admin.pedidos.index', compact('pedidos'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Não será utilizado.
      */
     public function create()
     {
-        //
+        return redirect()->route('admin.pedidos.index');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('admin.pedidos.index');
     }
 
     /**
-     * Display the specified resource.
+     * Exibe os detalhes de um pedido.
      */
     public function show(Pedido $pedido)
     {
-        //
+        $pedido->load(['usuario', 'itens']);
+
+        return view('admin.pedidos.show', compact('pedido'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Pedido $pedido)
     {
-        //
+        return redirect()->route('admin.pedidos.show', $pedido);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualiza os dados administrativos do pedido.
      */
     public function update(Request $request, Pedido $pedido)
     {
-        //
+        $dados = $request->validate([
+            'status' => [
+                'required',
+                'in:pendente,pagamento_aprovado,em_separacao,enviado,entregue,cancelado',
+            ],
+            'codigo_rastreamento' => [
+                'nullable',
+                'string',
+                'max:255',
+            ],
+            'observacao_admin' => [
+                'nullable',
+                'string',
+                'max:2000',
+            ],
+        ]);
+
+        $pedido->update($dados);
+
+        return redirect()
+            ->route('admin.pedidos.show', $pedido)
+            ->with('success', 'Pedido atualizado com sucesso!');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Não permitir exclusão de pedidos pelo painel.
      */
     public function destroy(Pedido $pedido)
     {
-        //
+        return redirect()
+            ->route('admin.pedidos.index')
+            ->with('error', 'A exclusão de pedidos não está disponível.');
     }
 }

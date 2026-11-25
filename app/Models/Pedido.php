@@ -10,10 +10,14 @@ class Pedido extends Model
 
     protected $fillable = [
         'usuario_id',
+
+        // Dados do cliente
         'nome',
         'email',
         'cpf',
         'telefone',
+
+        // Endereço
         'cep',
         'estado',
         'cidade',
@@ -21,10 +25,20 @@ class Pedido extends Model
         'endereco',
         'numero',
         'complemento',
+
+        // Valores
         'subtotal',
         'frete',
         'total',
+
+        // Pagamento e status
         'status',
+        'forma_pagamento',
+        'status_pagamento',
+
+        // Administração
+        'codigo_rastreamento',
+        'observacao_admin',
     ];
 
     public function usuario()

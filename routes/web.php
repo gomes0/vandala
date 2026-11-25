@@ -16,6 +16,7 @@ use App\Http\Controllers\LojaController;
 use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EnderecoController;
+use App\Http\Controllers\MeusPedidosController;
 
 
 // =====================================================
@@ -75,6 +76,10 @@ Route::post('/carrinho/diminuir/{produto}', [CarrinhoController::class, 'diminui
 // Checkout
 Route::get('/checkout', [CheckoutController::class, 'index'])
     ->name('checkout.index');
+Route::post('/checkout', [CheckoutController::class, 'store'])
+    ->name('checkout.store');
+Route::get('/pedido/{pedido}/confirmacao', [CheckoutController::class, 'confirmacao'])
+    ->name('checkout.confirmacao');
 
 
 // =====================================================
@@ -126,6 +131,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/meus-enderecos/{id}/principal', [EnderecoController::class, 'principal'])
         ->name('enderecos.principal');
 
+    // Histórico de compras
+    Route::get('/meus-pedidos', [MeusPedidosController::class, 'index'])
+        ->name('meus-pedidos.index');
 });
 
 
@@ -167,7 +175,6 @@ Route::middleware(['auth', 'admin'])
 
         // Pedidos
         Route::resource('pedidos', PedidoController::class);
-
     });
 // =====================================================
 // AUTENTICAÇÃO
