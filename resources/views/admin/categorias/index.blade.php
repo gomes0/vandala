@@ -1,4 +1,4 @@
-@extends('admin.layouts.admin')
+﻿@extends('admin.layouts.admin')
 
 @section('title', 'Categorias')
 
@@ -8,7 +8,7 @@
 
         <h1>Categorias</h1>
 
-        <a href="{{ route('categorias.create') }}" class="btn-primary">
+        <a href="{{ route('admin.categorias.create') }}" class="btn-primary">
             Nova Categoria
         </a>
 
@@ -26,7 +26,7 @@
 
                 <th>Status</th>
 
-                <th>Ações</th>
+                <th>AÃ§Ãµes</th>
 
             </tr>
 
@@ -45,11 +45,11 @@
 
                     <td>
 
-                        <a href="{{ route('categorias.edit', $categoria) }} " class="btn-editar" style="display:inline">
+                        <a href="{{ route('admin.categorias.edit', $categoria) }} " class="btn-editar" style="display:inline">
                             Editar
                         </a>
 
-                        <form action="{{ route('categorias.destroy', $categoria) }}" method="POST" style="display:inline">
+                        <form action="{{ route('admin.categorias.destroy', $categoria) }}" method="POST" style="display:inline">
 
                             @csrf
 
@@ -73,3 +73,4 @@
     </table>
 
 @endsection
+

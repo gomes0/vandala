@@ -1,4 +1,4 @@
-@extends('admin.layouts.admin')
+﻿@extends('admin.layouts.admin')
 
 @section('title', 'Produtos')
 
@@ -8,7 +8,7 @@
 
         <h1>Produtos</h1>
 
-        <a href="{{ route('produtos.create') }}" class="btn-primary">
+        <a href="{{ route('admin.produtos.create') }}" class="btn-primary">
 
             <i class="bi bi-plus-circle"></i>
 
@@ -38,13 +38,13 @@
 
                 <th>Categoria</th>
 
-                <th>Preço</th>
+                <th>PreÃ§o</th>
 
                 <th>Estoque</th>
 
                 <th>Status</th>
 
-                <th width="180">Ações</th>
+                <th width="180">AÃ§Ãµes</th>
 
             </tr>
 
@@ -69,13 +69,13 @@
 
                     <td>
 
-                        <a href="{{ route('produtos.edit', $produto) }}" class="btn-edit">
+                        <a href="{{ route('admin.produtos.edit', $produto) }}" class="btn-edit">
 
                             <i class="bi bi-pencil-square"></i>
 
                         </a>
 
-                        <a href="{{ route('produto-imagens.index', $produto) }}" class="btn-image"
+                        <a href="{{ route('admin.produto-imagens.index', $produto) }}" class="btn-image"
                             title="Gerenciar imagens">
 
                             <i class="bi bi-images"></i>
@@ -83,7 +83,7 @@
                         </a>
 
 
-                        <form action="{{ route('produtos.destroy', $produto) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('admin.produtos.destroy', $produto) }}" method="POST" style="display:inline;">
 
                             @csrf
 
@@ -119,3 +119,5 @@
     </table>
 
 @endsection
+
+

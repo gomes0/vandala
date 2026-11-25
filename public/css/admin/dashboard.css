@@ -466,14 +466,27 @@ body {
     margin-right: 8px;
 }
 
+/* Container dos dados (cliente, endereço, forma de pagamento) */
 .pedido-info {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0;
     margin-bottom: 17px;
 }
 
 .pedido-info:last-child {
+    margin-bottom: 0;
+}
+
+/* Cada linha: label em cima, valor embaixo */
+.pedido-info p {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 14px;
+}
+
+.pedido-info p:last-child {
     margin-bottom: 0;
 }
 
