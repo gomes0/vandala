@@ -17,6 +17,7 @@ use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\MeusPedidosController;
+use App\Http\Controllers\ClienteController;
 
 
 // =====================================================
@@ -174,8 +175,13 @@ Route::middleware(['auth', 'admin'])
 
 
         // Pedidos
-        Route::resource('pedidos', PedidoController::class);
-    });
+Route::resource('pedidos', PedidoController::class);
+
+// Clientes
+Route::get('/clientes', [ClienteController::class, 'index'])
+    ->name('clientes.index');
+
+});
 // =====================================================
 // AUTENTICAÇÃO
 // =====================================================
